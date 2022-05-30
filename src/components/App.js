@@ -3,7 +3,10 @@ import "../css/App.css";
 import ListContacts from "./ListContacts";
 
 const App = () => {
-  const [contacts, setCotacts] = useState([
+  const removeContact = (contact) => {
+    setContacts(contacts.filter((c) => c.id !== contact.id));
+  }
+  const [contacts, setContacts] = useState([
     {
       id: "karen",
       name: "Karen Isgrigg",
@@ -27,7 +30,7 @@ const App = () => {
 
   return (
       <div>
-        <ListContacts contacts={contacts} />
+        <ListContacts contacts={contacts} onDeleteContact={removeContact} />
       </div>
   );
 };
