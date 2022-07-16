@@ -8,10 +8,8 @@ const App = () => {
 
   useEffect(() => {
     const getContacts = async () => {
-      const getContacts = async () => {
-        const res = await ContactsAPI.getAll();
-        setContacts();
-      };
+      const res = await ContactsAPI.getAll();
+      setContacts(res);
     };
 
     getContacts();
